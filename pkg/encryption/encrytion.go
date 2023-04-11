@@ -71,6 +71,10 @@ func decryptionAdapter(cipherText string, secret string) (string, error) {
 		return "", err
 	}
 
+	if len(ciphertext) < SaltLength {
+		return "", errors.New("ciphertext too short")
+	}
+
 	// Extract the salt from the ciphertext
 	salt := ciphertext[:SaltLength]
 	ciphertext = ciphertext[SaltLength:]

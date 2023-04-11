@@ -3,7 +3,6 @@ package internal
 import (
 	"bytes"
 	"encoding/json"
-	"log"
 	"net/http"
 
 	"github.com/iamnator/envy/internal/model"
@@ -18,6 +17,19 @@ func encrytSecrets(secrets []model.Secret) error {
 			return err
 		}
 		secrets[i].Value = encrypted
+	}
+
+	return nil
+}
+
+func decryptSecrets(secrets []model.Secret) error {
+
+	for i, secret := range secrets {
+		decrypted, err := decrypt(secret.Value)
+		if err != nil {
+			return err
+		}
+		secrets[i].Value = decrypted
 	}
 
 	return nil
@@ -39,7 +51,7 @@ func setSecretOnHost(secrets []model.Secret) error {
 		"json/application",
 		bytes.NewReader(buf))
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	if err := errors.CheckError(resp); err != nil {

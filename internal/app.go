@@ -24,6 +24,7 @@ var (
 var (
 	source = flag.String("source", "", "file of env variables from")
 	set    = flag.String("set", "", "set a single secret")
+	desc   = flag.String("desc", "", "description of the secret")
 	get    = flag.String("get", "", "get a single secret")
 	// environment = flag.String("environment", "", "development, staging, production or any other environment")
 	dir    = flag.String("dir", "", "directory to store .env file")
@@ -91,6 +92,10 @@ func Run() {
 			log.Fatal(err)
 		}
 
+		if check(desc) {
+			secret.Description = *desc
+		}
+
 		if err := setSecretOnHost([]model.Secret{secret}); err != nil {
 			log.Fatal(err)
 		}
@@ -103,6 +108,11 @@ func Run() {
 	if check(dir) {
 		secrets, err := getSecretFromHost()
 		if err != nil {
+			log.Fatal(err)
+		}
+
+		// decrypt secrets
+		if err := decryptSecrets(secrets); err != nil {
 			log.Fatal(err)
 		}
 
@@ -129,7 +139,8 @@ func Run() {
 				log.Fatal(err)
 			}
 
-			fmt.Printf("%s=%s \n", secret[0].Key, value)
+			fmt.Printf("%s=%s		#%s \n",
+				s.Key, value, s.Description)
 		}
 	}
 

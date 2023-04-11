@@ -7,7 +7,7 @@ import (
 )
 
 func CheckError(resp *http.Response) error {
-	if resp.StatusCode > 300 {
+	if resp.StatusCode > 201 {
 		msg, err := io.ReadAll(resp.Body)
 		if err != nil {
 			return err

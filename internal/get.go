@@ -15,7 +15,18 @@ type downloadResponse struct {
 
 // getSecretFromHost downloads the secrets from the server and writes them to a file
 func getSecretFromHost(keys ...string) ([]model.Secret, error) {
-	resp, err := http.Get(HOST + "/get?key=" + strings.Join(keys, ","))
+
+	//make a get request
+
+	req, err := http.NewRequest("GET", HOST+"/get?key="+strings.Join(keys, ","), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	//add the secret to the header
+	req.Header.Add("secret", ENVY_SECRET)
+
+	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return nil, err
 	}
