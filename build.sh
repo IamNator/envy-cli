@@ -1,0 +1,1 @@
+go build -o bin/envy cmd/main.go
