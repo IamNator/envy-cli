@@ -14,5 +14,10 @@ func CheckError(resp *http.Response) error {
 		}
 		return fmt.Errorf("unexpected status code: %d: %s", resp.StatusCode, string(msg))
 	}
+
+	if resp.ContentLength < 1 { //no body
+		return fmt.Errorf("no body in response, check network connection")
+	}
+
 	return nil
 }
