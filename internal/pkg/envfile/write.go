@@ -35,7 +35,7 @@ func CreatEnvFile(dir string, secrets []model.Secret) error {
 	var str string
 	println("writing secrets to file")
 	for _, secret := range secrets {
-		str += fmt.Sprintf("%s=%s # %s \n", secret.Key, secret.Value, secret.Description)
+		str = fmt.Sprintf("%s=%s # %s \n", secret.Key, secret.Value, secret.Description)
 		writer.WriteString(str)
 	}
 	writer.Flush()
