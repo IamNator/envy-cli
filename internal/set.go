@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/iamnator/envy/internal/model"
-	"github.com/iamnator/envy/internal/pkg/errors"
+	"github.com/iamnator/envy-cli/internal/model"
+	"github.com/iamnator/envy-cli/internal/pkg/errors"
 )
 
 func encrytSecrets(secrets []model.Secret) error {

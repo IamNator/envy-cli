@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/iamnator/envy/internal/model"
+	"github.com/iamnator/envy-cli/internal/model"
 )
 
 func ReadFromFile(filename string) ([]model.Secret, error) {

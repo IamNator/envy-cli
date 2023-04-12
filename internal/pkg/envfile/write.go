@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/iamnator/envy/internal/model"
+	"github.com/iamnator/envy-cli/internal/model"
 )
 
 func CreatEnvFile(dir string, secrets []model.Secret) error {

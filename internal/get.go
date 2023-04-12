@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/iamnator/envy/internal/model"
-	"github.com/iamnator/envy/internal/pkg/errors"
+	"github.com/iamnator/envy-cli/internal/model"
+	"github.com/iamnator/envy-cli/internal/pkg/errors"
 )
 
 type downloadResponse struct {

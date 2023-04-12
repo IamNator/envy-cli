@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/iamnator/envy/internal"
+	"github.com/iamnator/envy-cli/internal"
 )
 
 func main() {

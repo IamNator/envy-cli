@@ -1,4 +1,4 @@
-module github.com/iamnator/envy
+module github.com/iamnator/envy-cli
 
 go 1.20
 

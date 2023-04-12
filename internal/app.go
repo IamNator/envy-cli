@@ -6,10 +6,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/iamnator/envy/internal/model"
-	"github.com/iamnator/envy/internal/pkg/envfile"
-	"github.com/iamnator/envy/internal/pkg/parser"
-	"github.com/iamnator/envy/pkg/encryption"
+	"github.com/iamnator/envy-cli/internal/model"
+	"github.com/iamnator/envy-cli/internal/pkg/envfile"
+	"github.com/iamnator/envy-cli/internal/pkg/parser"
+	"github.com/iamnator/envy-cli/pkg/encryption"
 )
 
 type uploadRequest struct {

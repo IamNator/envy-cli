@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/iamnator/envy/internal/model"
+	"github.com/iamnator/envy-cli/internal/model"
 )
 
 // parseEnv parses a string of the form "key=value" and returns a Secret
