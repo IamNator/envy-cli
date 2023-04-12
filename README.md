@@ -8,6 +8,9 @@ ENVY is a cli tool for managing env variable across platforms.
 ## Motivations
 I needed a simple and inexpensive way of managing env variable. The best part of this, is that it's self hosted.
 
+#### perks
+Imagine, never having to copy and paste env variable again.
+
 [CLOUD SERVER](https://github.com/IamNator/envy-download)
 
 ## INSTALLATION
