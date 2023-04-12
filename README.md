@@ -9,6 +9,11 @@ You can set, get or retrieve to a .env file.
 
 [CLOUD SERVER](https://github.com/IamNator/envy-download)
 
+INSTALLATION
+```
+  $ curl -sL https://raw.githubusercontent.com/IamNator/envy-cli/main/scripts/install.sh | bash
+```
+
 HOW
 
 The env variable are encryted before they are sent to the cloud. When they are retrieved, a key is also used to decryt them
