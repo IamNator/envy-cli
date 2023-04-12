@@ -1,0 +1,17 @@
+[Unit]
+Description=Environment Varible Manager Client
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Environment="PASSCODE"
+Type=simple
+ExecStart=/usr/local/bin/envy-cli
+StandardOutput=file:/var/log/envy-cli-service/envy-cli-service.log
+StandardError=file:/var/log/envy-cli-service/envy-cli-service.log
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
