@@ -16,7 +16,7 @@ Imagine, never having to copy and paste env variable again.
 
 ## INSTALLATION
 ```
-  $ curl -sL https://raw.githubusercontent.com/IamNator/envy-cli/main/scripts/install.sh | bash
+curl -sL https://raw.githubusercontent.com/IamNator/envy-cli/main/scripts/install.sh | bash
 ```
 
 ## HOW
